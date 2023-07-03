@@ -1,0 +1,39 @@
+<!--================ Start Enter OTP Area =================-->
+<!--================ Start Content Area =================-->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ================ End Content Area ================= -->
+<!-- Alerts -->
+<section style="padding-top: 20px;" >
+   {%include 'alert.html' %}
+</section>
+<!--================Login Box Area =================-->
+<section class="login_box_area section-margin">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="login_box_img">
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="login_form_inner">
+               <h3>Enter OTP To Forgot Password</h3>
+               <form class="row login_form" method="POST">
+                  {% csrf_token %}
+                  <div class="col-md-12 form-group">
+                     <input name="otp" type="text" class="form-control" id="otp" placeholder="One Time Password (OTP)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'One Time Password (OTP)'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <button type="submit" value="submit" class="button  w-100">Submit OTP</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--================End Login Box Area =================-->
+{% endblock %}
+<!--================ End Enter OTP Area =================-->
